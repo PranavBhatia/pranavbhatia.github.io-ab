@@ -10,11 +10,11 @@ import { ServersComponent } from './servers/servers.component';
   declarations: [
     AppComponent,
     ServerComponent,
-    ServersComponent,
-    FormsModule
+    ServersComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
