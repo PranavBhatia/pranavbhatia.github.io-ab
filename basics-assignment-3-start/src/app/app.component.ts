@@ -13,11 +13,9 @@ export class AppComponent {
 
   displayStatus = true;
   buttonClickLogArray = [];
-  count = 1;
   
   toggleDisplayStatus(){
     this.displayStatus = !this.displayStatus;
-    this.buttonClickLogArray.push(this.count);
-    this.count++;
+    this.buttonClickLogArray.push(new Date());
   }
 }

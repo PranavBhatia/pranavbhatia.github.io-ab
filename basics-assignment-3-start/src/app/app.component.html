@@ -7,9 +7,9 @@
         Display Details</button>
       <p *ngIf = "displayStatus">This paragraph is not always displayed!</p>
       <p 
-        *ngFor = "let log of buttonClickLogArray"
-        [ngStyle] = "{ backgroundColor: (log >= 5) ? 'blue' : 'white'}"
-        [ngClass] = "{ count5: log >= 5 }">
+        *ngFor = "let log of buttonClickLogArray; let i = index"
+        [ngStyle] = "{ backgroundColor: (i >= 4) ? 'blue' : 'white'}"
+        [ngClass] = "{ count5: i >= 4 }">
         {{ log }}</p>
     </div>
   </div>
