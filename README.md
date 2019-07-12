@@ -1,4 +1,4 @@
-# Angular-Practice
+# Angular-Practice Notes:
 
 ### Bindable Properties and Events
 How do you know to which Properties or Events of HTML Elements you may bind? You can basically bind to all Properties and Events - a good idea is to `console.log()`  the element you're interested in to see which properties and events it offers.
