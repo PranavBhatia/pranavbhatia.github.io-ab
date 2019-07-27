@@ -13,3 +13,8 @@ Important: For Two-Way-Binding to work, you need to enable the `ngModel`  direct
 You then also need to add the import from `@angular/forms`  in the app.module.ts file:
 
 `import { FormsModule } from '@angular/forms';`
+
+### Info about Renderer
+We can use the Angular Renderer class to change the style of a HTML element. As a good practice, we should use the Renderer for any DOM manipulations.
+
+Of course, we can do more than simply change the styling of an element via setStyle(). Learn more about the available Renderer methods [here](https://angular.io/api/core/Renderer2).
