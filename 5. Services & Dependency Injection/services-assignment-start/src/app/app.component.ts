@@ -24,6 +24,6 @@ export class AppComponent implements OnInit {
   }
 
   onSetToActive(id: number) {
-   this.usersService.onSetToActive(id);
+    this.usersService.onSetToActive(id);
   }
 }
