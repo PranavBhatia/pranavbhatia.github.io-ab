@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {UsersService} from './users.service';
 
 @Component({
@@ -7,23 +7,6 @@ import {UsersService} from './users.service';
   styleUrls: ['./app.component.css'],
   providers: [UsersService]
 })
-export class AppComponent implements OnInit {
-  activeUsers: string[] = [];
-  inactiveUsers: string[] = [];
+export class AppComponent {
 
-  constructor(private usersService: UsersService) {
-  }
-
-  ngOnInit(): void {
-    this.activeUsers = this.usersService.activeUsers;
-    this.inactiveUsers = this.usersService.inactiveUsers;
-  }
-
-  onSetToInactive(id: number) {
-    this.usersService.onSetToInactive(id);
-  }
-
-  onSetToActive(id: number) {
-    this.usersService.onSetToActive(id);
-  }
 }
