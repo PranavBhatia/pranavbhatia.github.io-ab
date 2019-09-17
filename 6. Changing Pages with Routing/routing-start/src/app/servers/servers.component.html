@@ -3,10 +3,10 @@
     <div class="list-group">
       <a
         *ngFor="let server of servers"
-        [routerLink]="['/servers', 5, 'edit']"
         [queryParams]="{allowEdit: '1'}"
-        fragment="loading"
-        class="list-group-item">
+        [routerLink]="['/servers', 5, 'edit']"
+        class="list-group-item"
+        fragment="loading">
         {{ server.name }}
       </a>  <!--Url formed => http://localhost:4200/servers/5/edit?allowEdit=1#loading-->
     </div>
