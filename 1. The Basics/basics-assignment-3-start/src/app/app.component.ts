@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +13,8 @@ export class AppComponent {
 
   displayStatus = true;
   buttonClickLogArray = [];
-  
-  toggleDisplayStatus(){
+
+  toggleDisplayStatus() {
     this.displayStatus = !this.displayStatus;
     this.buttonClickLogArray.push(new Date());
   }

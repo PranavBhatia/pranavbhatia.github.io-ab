@@ -2,17 +2,17 @@
   <div class="row">
     <div class="col-xs-12">
       <button
-        class="btn btn-primary"
-        (click)="onlyOdd = !onlyOdd">Only show odd numbers
+        (click)="onlyOdd = !onlyOdd"
+        class="btn btn-primary">Only show odd numbers
       </button>
       <br><br>
       <ul class="list-group">
         <div *ngIf="onlyOdd">
           <li
-            class="list-group-item"
+            *ngFor="let odd of oddNumbers"
             [ngClass]="{odd: odd % 2 !== 0}"
             [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'}"
-            *ngFor="let odd of oddNumbers">
+            class="list-group-item">
             {{odd}}
           </li>
         </div>
@@ -38,10 +38,10 @@
         <!--</ng-template>-->
         <div *appUnless="onlyOdd">
           <li
-            class="list-group-item"
+            *ngFor="let even of evenNumbers"
             [ngClass]="{odd: even % 2 !== 0}"
             [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'}"
-            *ngFor="let even of evenNumbers">
+            class="list-group-item">
             {{even}}
           </li>
         </div>

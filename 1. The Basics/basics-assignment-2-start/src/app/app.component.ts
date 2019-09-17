@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +10,14 @@ export class AppComponent {
   username = '';
   usernameIsEmpty = true;
 
-  onUpdateUsername(event: Event){
-    if(this.username !== '')
+  onUpdateUsername(event: Event) {
+    if (this.username !== '')
       this.usernameIsEmpty = false;
     else
       this.usernameIsEmpty = true;
   }
 
-  resetUsername(){
+  resetUsername() {
     this.username = '';
     this.usernameIsEmpty = true;
   }
