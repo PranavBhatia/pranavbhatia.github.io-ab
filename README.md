@@ -18,3 +18,6 @@ You then also need to add the import from `@angular/forms`  in the app.module.ts
 We can use the Angular Renderer class to change the style of a HTML element. As a good practice, we should use the Renderer for any DOM manipulations.
 
 Of course, we can do more than simply change the styling of an element via setStyle(). Learn more about the available Renderer methods [here](https://angular.io/api/core/Renderer2).
+
+### Observables
+Observables are constructs to which you subscribe to be informed about the changes in data because remember, observables are that stream of data and whenever a new data piece is emitted, our subscription will know about it.
