@@ -17,6 +17,7 @@
           <div class="form-group">
             <label for="email">Mail</label>
             <input
+              #email="ngModel"
               class="form-control"
               email
               id="email"
@@ -26,7 +27,7 @@
               type="email">
           </div>
         </div>
-        <p *ngIf="">Please enter a valid value!</p>
+        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select
