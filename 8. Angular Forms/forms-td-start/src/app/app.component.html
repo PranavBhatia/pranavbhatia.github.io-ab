@@ -17,24 +17,24 @@
           <div class="form-group">
             <label for="email">Mail</label>
             <input
-              #email="ngModel"
-              class="form-control"
-              email
-              id="email"
-              name="email"
-              ngModel
-              required
-              type="email">
+                #email="ngModel"
+                class="form-control"
+                email
+                id="email"
+                name="email"
+                ngModel
+                required
+                type="email">
           </div>
         </div>
-        <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+        <span *ngIf="!email.valid && email.touched" class="help-block">Please enter a valid email!</span>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select
+            [ngModel]="defaultQuestion"
             class="form-control"
             id="secret"
-            name="secret"
-            ngModel>
+            name="secret">
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
