@@ -1,8 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-        <div id="user-data">
+      <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <div
+            #userData="ngModelGroup"
+            id="user-data"
+            ngModelGroup="userData">
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -25,9 +28,10 @@
                 ngModel
                 required
                 type="email">
+            <span *ngIf="!email.valid && email.touched" class="help-block">Please enter a valid email!</span>
           </div>
         </div>
-        <span *ngIf="!email.valid && email.touched" class="help-block">Please enter a valid email!</span>
+        <p *ngIf="!userData.valid && userData.touched">User data is invalid!</p>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select
