@@ -2,27 +2,29 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input
-            class="form-control"
-            formControlName="username"
-            id="username"
-            type="text">
-          <span
-            *ngIf="!signUpForm.get('username').valid && signUpForm.get('username').touched"
-            class="help-block">Please enter a valid username!</span>
-        </div>
-        <div class="form-group">
-          <label for="email">email</label>
-          <input
-            class="form-control"
-            formControlName="email"
-            id="email"
-            type="text">
-          <span
-            *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched"
-            class="help-block">Please enter a valid email!</span>
+        <div formGroupName="userData">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              class="form-control"
+              formControlName="username"
+              id="username"
+              type="text">
+            <span
+              *ngIf="!signUpForm.get('userData.username').valid && signUpForm.get('userData.username').touched"
+              class="help-block">Please enter a valid username!</span>
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input
+              class="form-control"
+              formControlName="email"
+              id="email"
+              type="text">
+            <span
+              *ngIf="!signUpForm.get('userData.email').valid && signUpForm.get('userData.email').touched"
+              class="help-block">Please enter a valid email!</span>
+          </div>
         </div>
         <div *ngFor="let gender of genders" class="radio">
           <label>
