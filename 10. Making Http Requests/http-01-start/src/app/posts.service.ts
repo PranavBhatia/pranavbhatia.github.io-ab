@@ -65,7 +65,8 @@ export class PostsService {
       .delete(
         'https://angular-practice-4e312.firebaseio.com/posts.json',
         {
-          observe: 'events'
+          observe: 'events',
+          responseType: 'text'
         }
       ).pipe(tap(event => {
         console.log(event);
