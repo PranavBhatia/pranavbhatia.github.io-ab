@@ -35,4 +35,9 @@ export class PostsService {
         return postsArray;
       }));
   }
+
+  clearPosts() {
+    return this.http
+      .delete<Post[]>('https://angular-practice-4e312.firebaseio.com/posts.json');
+  }
 }
