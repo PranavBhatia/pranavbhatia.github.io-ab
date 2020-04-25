@@ -14,14 +14,32 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         backgroundColor: 'blue',
         transform: 'translateX(100px)'
       })),
+      transition('normal <=> highlighted', animate(300)),
+      // transition('highlighted => normal', animate(800))
+    ]),
+    trigger('wildState', [
+      state('normal', style({
+        'background-color': 'red',
+        transform: 'translateX(0) scale(1)'
+      })),
+      state('highlighted', style({
+        backgroundColor: 'blue',
+        transform: 'translateX(100px) scale(1)'
+      })),
+      state('shrunken', style({
+        backgroundColor: 'green',
+        transform: 'translateX(0px) scale(0.5)'
+      })),
       transition('normal => highlighted', animate(300)),
-      transition('highlighted => normal', animate(800))
+      transition('highlighted => normal', animate(800)),
+      transition('shrunken <=> *', animate(500))
     ])
   ]
 })
 export class AppComponent {
   list = ['Milk', 'Sugar', 'Bread'];
   state = 'normal';
+  wildState = 'normal';
 
   onAdd(item) {
     this.list.push(item);
@@ -33,5 +51,15 @@ export class AppComponent {
     } else {
       this.state = 'normal';
     }
+
+    if (this.wildState === 'normal') {
+      this.wildState = 'highlighted';
+    } else {
+      this.wildState = 'normal';
+    }
+  }
+
+  onShrink() {
+    this.wildState = 'shrunken';
   }
 }
