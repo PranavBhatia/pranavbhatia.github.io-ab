@@ -28,11 +28,20 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
       })),
       state('shrunken', style({
         backgroundColor: 'green',
-        transform: 'translateX(0px) scale(0.5)'
+        transform: 'translateX(0) scale(0.5)'
       })),
       transition('normal => highlighted', animate(300)),
       transition('highlighted => normal', animate(800)),
-      transition('shrunken <=> *', animate(500))
+      transition('shrunken <=> *', [
+        style({
+          backgroundColor: 'orange',
+          borderRadius: '0'
+        }),
+        animate(1000, style({
+          borderRadius: '50px'
+        })),
+        animate(500)
+      ])
     ])
   ]
 })
@@ -46,17 +55,8 @@ export class AppComponent {
   }
 
   onAnimate() {
-    if (this.state === 'normal') {
-      this.state = 'highlighted';
-    } else {
-      this.state = 'normal';
-    }
-
-    if (this.wildState === 'normal') {
-      this.wildState = 'highlighted';
-    } else {
-      this.wildState = 'normal';
-    }
+    this.state === 'normal' ? this.state = 'highlighted' : this.state = 'normal';
+    this.wildState === 'normal' ? this.wildState = 'highlighted' : this.wildState = 'normal';
   }
 
   onShrink() {
